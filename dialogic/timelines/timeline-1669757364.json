@@ -1,0 +1,113 @@
+{
+	"events": [
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1669757033.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1669757301.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1669757301.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Hello, welcome to the island."
+		},
+		{
+			"character": "character-1669757033.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Hello."
+		},
+		{
+			"character": "character-1669757301.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "Default",
+			"question": "What are you looking for?"
+		},
+		{
+			"choice": "The end of the level?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1669757301.json",
+			"event_id": "dialogic_001",
+			"portrait": "Surprise",
+			"text": "Why do you think the level has an ending??"
+		},
+		{
+			"choice": "More apples.",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1669757301.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "Those are my apples."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1669757033.json",
+			"event_id": "dialogic_001",
+			"portrait": "Surprised",
+			"text": "I'm going to run away."
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		},
+		{
+			"emit_signal": "timeline_end",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1669757364.json",
+		"name": "Demo"
+	}
+}

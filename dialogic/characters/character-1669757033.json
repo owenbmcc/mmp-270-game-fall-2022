@@ -1,0 +1,33 @@
+{
+	"color": "#ff4dfb53",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1669757033.json",
+	"mirror_portraits": false,
+	"name": "Player",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Sprites/character_portraits/character_portrait_0.png"
+		},
+		{
+			"name": "Surprised",
+			"path": "res://Sprites/character_portraits/character_portrait_1.png"
+		},
+		{
+			"name": "Angry",
+			"path": "res://Sprites/character_portraits/character_portrait_2.png"
+		},
+		{
+			"name": "Happy",
+			"path": "res://Sprites/character_portraits/character_portrait_3.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

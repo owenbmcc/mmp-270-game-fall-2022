@@ -1,0 +1,33 @@
+{
+	"color": "#ffd5792d",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1669757301.json",
+	"mirror_portraits": false,
+	"name": "NPC",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Sprites/npc_portraits/npc_portrait_0.png"
+		},
+		{
+			"name": "Surprise",
+			"path": "res://Sprites/npc_portraits/npc_portrait_1.png"
+		},
+		{
+			"name": "Angry",
+			"path": "res://Sprites/npc_portraits/npc_portrait_2.png"
+		},
+		{
+			"name": "Happy",
+			"path": "res://Sprites/npc_portraits/npc_portrait_3.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

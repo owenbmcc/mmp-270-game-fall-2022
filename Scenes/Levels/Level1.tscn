@@ -1,0 +1,238 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Components/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/scenery_signs.png" type="Texture" id=2]
+[ext_resource path="res://270_TileSets/AutoTile3x3_Platforms.tres" type="TileSet" id=3]
+[ext_resource path="res://Sprites/background.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Components/Cactus.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Components/Apple.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Components/Bug.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Audio/Dee Yan-Key - Maidin san Fhómhar. Andante.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Audio/LevelStart.wav" type="AudioStream" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37, 134.5 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="Blocker" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocker"]
+position = Vector2( -144, -105.5 )
+shape = SubResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.25, 0.1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.462745, 0.388235, 0.819608, 1 )
+texture = ExtResource( 4 )
+vframes = 2
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color( 0.462745, 0.388235, 0.819608, 1 )
+texture = ExtResource( 4 )
+vframes = 2
+frame = 1
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+collision_layer = 10
+format = 1
+tile_data = PoolIntArray( -131027, 0, 196609, -131026, 0, 196611, -131022, 0, 196609, -131021, 0, 196610, -131020, 0, 196610, -131019, 0, 196611, -131017, 0, 8, -131016, 0, 10, -131015, 0, 11, -131011, 0, 8, -131010, 0, 10, -131009, 0, 11, -65494, 0, 196609, -65493, 0, 196611, -65488, 0, 196609, -65487, 0, 196611, -65481, 0, 65544, -65480, 0, 131081, -65479, 0, 131083, -65475, 0, 65544, -65474, 0, 131081, -65473, 0, 131083, 65527, 0, 8, 65528, 0, 10, 65529, 0, 10, 65530, 0, 10, 65531, 0, 10, 65532, 0, 10, 65533, 0, 10, 65534, 0, 10, 65535, 0, 10, 0, 0, 10, 1, 0, 11, 3, 0, 196609, 4, 0, 196610, 5, 0, 196611, 8, 0, 196609, 9, 0, 196610, 10, 0, 196611, 14, 0, 196609, 15, 0, 196610, 16, 0, 196610, 17, 0, 196610, 18, 0, 196611, 40, 0, 196609, 41, 0, 196611, 46, 0, 196609, 47, 0, 196611, 55, 0, 196616, 56, 0, 196617, 57, 0, 196614, 58, 0, 196610, 59, 0, 196610, 60, 0, 196610, 61, 0, 196613, 62, 0, 196617, 63, 0, 196619, 131063, 0, 65544, 131064, 0, 131081, 131065, 0, 131081, 131066, 0, 131081, 131067, 0, 131081, 131068, 0, 131081, 131069, 0, 131081, 131070, 0, 131081, 131071, 0, 131081, 65536, 0, 131081, 65537, 0, 131083, 65574, 0, 196609, 65575, 0, 196611, 65584, 0, 196609, 65585, 0, 196611, 196599, 0, 65544, 196600, 0, 131081, 196601, 0, 131081, 196602, 0, 131081, 196603, 0, 131081, 196604, 0, 131081, 196605, 0, 131081, 196606, 0, 131081, 196607, 0, 131081, 131072, 0, 131081, 131073, 0, 131083, 131108, 0, 196609, 131109, 0, 196611, 131118, 0, 196609, 131119, 0, 196611, 262135, 0, 196616, 262136, 0, 196617, 262137, 0, 196617, 262138, 0, 196617, 262139, 0, 196617, 262140, 0, 196617, 262141, 0, 196617, 262142, 0, 196617, 262143, 0, 196617, 196608, 0, 196617, 196609, 0, 196619, 196642, 0, 196609, 196643, 0, 196611, 196656, 0, 196609, 196657, 0, 196610, 196658, 0, 196611, 262162, 0, 8, 262163, 0, 11, 262165, 0, 8, 262166, 0, 11, 262168, 0, 8, 262169, 0, 11, 262171, 0, 8, 262172, 0, 11, 262174, 0, 8, 262175, 0, 10, 262176, 0, 10, 262177, 0, 11, 262190, 0, 196609, 262191, 0, 196611, 327688, 0, 196609, 327689, 0, 196610, 327690, 0, 196610, 327691, 0, 196610, 327692, 0, 196610, 327693, 0, 196610, 327694, 0, 196610, 327695, 0, 196610, 327696, 0, 196610, 327697, 0, 196610, 327698, 0, 196613, 327699, 0, 196619, 327701, 0, 196616, 327702, 0, 196619, 327704, 0, 196616, 327705, 0, 196619, 327707, 0, 196616, 327708, 0, 196619, 327710, 0, 196616, 327711, 0, 196617, 327712, 0, 196617, 327713, 0, 196614, 327714, 0, 196610, 327715, 0, 196610, 327716, 0, 196610, 327717, 0, 196610, 327718, 0, 196610, 327719, 0, 196610, 327720, 0, 196610, 327721, 0, 196610, 327722, 0, 196610, 327723, 0, 196610, 327724, 0, 196610, 327725, 0, 196611 )
+
+[node name="Scenery" type="Node2D" parent="."]
+
+[node name="Sign1" type="Sprite" parent="Scenery"]
+position = Vector2( 80, 16 )
+texture = ExtResource( 2 )
+hframes = 2
+vframes = 2
+
+[node name="Bugs" type="Node2D" parent="."]
+
+[node name="Bug2" parent="Bugs" instance=ExtResource( 7 )]
+position = Vector2( 2112, 264 )
+activate_on_player_detect = true
+
+[node name="Bug3" parent="Bugs" instance=ExtResource( 7 )]
+position = Vector2( 2240, 200 )
+
+[node name="Bug4" parent="Bugs" instance=ExtResource( 7 )]
+position = Vector2( 2496, 64 )
+
+[node name="Bug5" parent="Bugs" instance=ExtResource( 7 )]
+position = Vector2( 2752, -64 )
+
+[node name="Bug6" parent="Bugs" instance=ExtResource( 7 )]
+position = Vector2( 3280, -128 )
+
+[node name="Bug7" parent="Bugs" instance=ExtResource( 7 )]
+position = Vector2( 3376, -128 )
+
+[node name="Bug" parent="Bugs" instance=ExtResource( 7 )]
+position = Vector2( 1992, 264 )
+activate_on_player_detect = true
+
+[node name="Cactuses" type="Node2D" parent="."]
+
+[node name="Cactus" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 1216, 272 )
+
+[node name="Cactus2" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 1408, 272 )
+
+[node name="Cactus3" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 1600, 272 )
+
+[node name="Cactus4" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2200, 328 )
+
+[node name="Cactus5" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2272, 328 )
+
+[node name="Cactus6" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2352, 328 )
+
+[node name="Cactus7" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2400, 328 )
+
+[node name="Cactus8" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2448, 328 )
+
+[node name="Cactus9" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2504, 328 )
+
+[node name="Cactus10" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2552, 328 )
+
+[node name="Cactus11" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2576, 328 )
+
+[node name="Cactus12" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2656, 328 )
+
+[node name="Cactus13" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2712, 328 )
+
+[node name="Cactus14" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2792, 328 )
+
+[node name="Cactus15" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2840, 328 )
+
+[node name="Cactus16" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 2888, 328 )
+
+[node name="Cactus17" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 3232, -120 )
+
+[node name="Cactus18" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 3328, -120 )
+
+[node name="Cactus19" parent="Cactuses" instance=ExtResource( 5 )]
+position = Vector2( 3416, -120 )
+
+[node name="Apples" type="Node2D" parent="."]
+
+[node name="Apple" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 1761, 256 )
+
+[node name="Apple2" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 1808, 256 )
+
+[node name="Apple3" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 2368, 128 )
+
+[node name="Apple4" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 2624, 0 )
+
+[node name="Apple5" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3721, -80 )
+
+[node name="Apple6" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3720, -48 )
+
+[node name="Apple7" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3720, -24 )
+
+[node name="Apple8" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3738, 0 )
+
+[node name="Apple9" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3756, -88 )
+
+[node name="Apple10" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3755, -56 )
+
+[node name="Apple11" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3755, -32 )
+
+[node name="Apple12" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3773, -8 )
+
+[node name="Apple13" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3785, -88 )
+
+[node name="Apple14" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3784, -56 )
+
+[node name="Apple15" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3784, -32 )
+
+[node name="Apple16" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3802, -8 )
+
+[node name="Apple17" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3833, -88 )
+
+[node name="Apple18" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3832, -56 )
+
+[node name="Apple19" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3832, -32 )
+
+[node name="Apple20" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3850, -8 )
+
+[node name="Apple21" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3868, -88 )
+
+[node name="Apple22" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3867, -56 )
+
+[node name="Apple23" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3867, -32 )
+
+[node name="Apple24" parent="Apples" instance=ExtResource( 6 )]
+position = Vector2( 3885, -8 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+speed = 200
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -24.0
+autoplay = true
+
+[node name="EnterLevel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -24.0
+autoplay = true
